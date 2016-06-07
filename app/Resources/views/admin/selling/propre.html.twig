@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+   
+{% block main %}
+
+<h1>Nos ventes:</h1>
+
+
+{% for it in list_id %}
+
+{% if userId==it %}
+	it
+<br/>
+{% endif %}
+{% endfor %}
+{{ userId }}
+{% endblock %}

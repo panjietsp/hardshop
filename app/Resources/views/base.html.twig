@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+         {% stylesheets '@bootstrap_css' filter='cssrewrite' %}
+             <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+           {% endstylesheets %}
+          <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% endblock %}
+    
+    </head>
+    <body>
+     <div class="container-fluid">
+     
+     
+        {% block body %}
+        
+         <div class="row">
+        	 {% block navigation %}
+	                 <ol class="breadcrumb">
+	  						<li><a href="#">Home</a></li>
+	  						<li><a href="#">2013</a></li>
+	 						 <li class="active">十一月</li>
+					 </ol>
+             {% endblock %} {# navigation #}
+        </div>
+        
+        
+        <div class="row">
+                     {#   <div class="col-sm-3 col-md-2 sidebar"> #}
+                      <div class=" col-md-2 sidebar">
+                                {% block sidebar %}{% endblock %} {# sidebar #}
+                        </div> <!-- sidebar -->
+                     {#   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"> #}
+                     <div class=" col-md-10  main">
+
+                           {% block main %}
+                           
+                            {% endblock %}
+
+                        </div> <!-- main -->
+                </div> <!-- row -->
+        
+        
+        {% endblock %}
+        
+        {% block javascripts %}
+         {% javascripts '@jquery' '@bootstrap_js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+          {% endjavascripts %}
+        {% endblock %}
+        
+        </div>
+    </body>
+</html>

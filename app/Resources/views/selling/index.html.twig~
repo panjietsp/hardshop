@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+ 
+             
+{% block body %}
+
+<h1>Nos itemTypes:</h1>
+
+
+{% for it in itemTypes %}
+
+	{{it.id}} : {{it.manufacturer}}||{{it.model}}||{{it.description}} 
+	<a href="{{ path('add_stock', { itemTypeId: it.id }) }}">add_stock</a>
+
+{% endfor %}
+
+
+{% endblock %}

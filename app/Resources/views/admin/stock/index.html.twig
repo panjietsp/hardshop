@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+  {% block navigation %} {% endblock %} {# navigation #}
+             
+{% block main %}
+
+
+
+<h1>Nos stocks</h1>
+
+<div class="stock">
+
+ <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>SellPrice</th>
+            <th>CurrentStock</th>
+            <th>Minimum</th>
+          </tr>
+        </thead>
+{% for it in stocks %}
+	  
+       <tbody>
+          <tr>
+            <td>{{it.id}}</td>
+            <td> {{it.sellPrice}}</td>
+            <td>{{it.count}}</td>
+		    <td>{{it.min}} </td>
+			   
+          </tr>
+        </tbody>
+       
+{% endfor %}
+
+</table>
+
+
+</div>
+
+{% endblock %}

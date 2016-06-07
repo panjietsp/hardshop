@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+  {% block navigation %} {% endblock %} {# navigation #}
+  
+    {% block sidebar %}
+<button type="button" class="btn btn-block"><a href="{{ path('homepage')}}">HomePage</a></button>
+
+
+{% endblock %}
+{% block main %}
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+{% endblock %}

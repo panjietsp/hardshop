@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+ {% block navigation %} {% endblock %} {# navigation #}
+
+
+{% block main %}
+
+
+
+
+<h1>Nos itemTypes</h1>
+
+<div class="itemType">
+
+ <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Manufacturer</th>
+            <th>Model</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+{% for it in itemTypes %}
+	  
+       <tbody>
+          <tr>
+            <td>{{it.id}}</td>
+            <td>{{it.manufacturer}}</td>
+            <td>{{it.model}}</td>
+		    <td>{{it.description}} </td>
+			   
+          </tr>
+        </tbody>
+       
+{% endfor %}
+
+</table>
+
+
+</div>
+
+{% endblock %}

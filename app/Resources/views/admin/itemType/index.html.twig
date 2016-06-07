@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+    
+    
+
+
+     {% block navigation %}
+	                 <ol class="breadcrumb">
+	  						<li><a href="{{ path('homepage')}}">HomePage</a></li>
+	  						<li class="active">Admin</li>
+					 </ol>
+             {% endblock %} {# navigation #}
+    
+    {% block sidebar %}
+  
+    <script type="text/javascript">
+             function afficher(nom) {
+          $.ajax({
+              type : "GET",
+              url : nom,
+              error : function() {
+                  $('#contenu_ajax').html(
+                      "<font color=red>Coordonn茅es absentes</font>");
+              },
+              success : function(data) {
+                  $('#contenu_ajax').html(data);
+              }
+          });
+      }
+        </script>
+
+ <button type="button" class="btn btn-block"><a  href="javascript:afficher('{{path('liste_itemType')  }}');">Liste de ItemTypes</a></button>
+ <button type="button" class="btn btn-block"><a  href="javascript:afficher('{{path('liste_stock')  }}');">Liste de Stocks</a></button>
+<button type="button" class="btn btn-block"><a  href="javascript:afficher('{{path('liste_user')  }}');">liste de vendeurs</a></button>
+<button type="button" class="btn btn-block"><a  href="javascript:afficher('{{path('liste_sellings')  }}');">liste de ventes</a></button>
+<button type="button" class="btn btn-block"><a  href="javascript:afficher('{{path('fos_user_registration_register') }}');">Ajouter un Vendeur</a></button>
+<button type="button" class="btn btn-block"><a href="javascript:afficher('{{path('add_itemType')  }}');">Ajouter un itemType</a></button>
+
+
+{% endblock %}
+    
+    {% block main%}
+<div id="contenu_ajax"></div>
+{% endblock %}
+    
+

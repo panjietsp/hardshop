@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+ 
+             
+{% block body %}
+
+<h1>Nos stocks::</h1>
+
+
+{% for it in stocks %}
+
+	{{it.id}} : {{it.sellPrice}}||{{it.count}}||{{it.min}} 
+		<a href="{{ path('add_selling', { stockId: it.id }) }}">add_selling</a>
+
+{% endfor %}
+
+
+{% endblock %}

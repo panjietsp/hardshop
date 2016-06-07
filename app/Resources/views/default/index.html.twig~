@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+ 
+             
+{% block body %}
+
+<h1>Vous devez login comme un vendeur ou admin</h1>
+
+
+
+
+	<a href="{{ path('fos_user_security_login')}}">log_in</a>
+
+<h1>Ou vous voulez registrer</h1>
+	<a href="{{ path('fos_user_registration_register')}}">log_in</a>
+
+
+
+{% endblock %}

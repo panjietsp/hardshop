@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+  {% block navigation %} {% endblock %} {# navigation #}
+             
+  {% block sidebar %}
+<button type="button" class="btn btn-block"><a href="{{ path('add_selling', { stockId: 1 })}}">Vendre Articles</a></button>
+
+
+{% endblock %}
+             
+             
+{% block main %}
+
+
+
+<h1>Nos ventes</h1>
+
+<div class="selling">
+
+ <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Nombre</th>
+          </tr>
+        </thead>
+{% for it in sellings %}
+	  
+       <tbody>
+          <tr>
+            <td>{{it.id}}</td>
+            <td> {{it.date|date("d/m/y")}}</td>
+            <td>{{it.count}}</td>			   
+          </tr>
+        </tbody>
+       
+{% endfor %}
+
+
+{% endblock %}

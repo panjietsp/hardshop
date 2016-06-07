@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+ 
+        	 {% block navigation %}
+	                 <ol class="breadcrumb">
+	  						
+	 						 <li class="active">HomePage/</li>
+					 </ol>
+             {% endblock %} {# navigation #}
+
+    
+             
+{% block main %}
+
+
+<h1>Welcome to our application</h1>
+<h1>Please login to have access to our data base</h1>
+
+
+ <button type="button" class="btn btn-block"><a href="{{ path('fos_user_security_login')}}">log_in</a></button>
+
+ <button type="button" class="btn btn-block"><a href="{{ path('hp')}}">Admin</a></button>
+
+ <button type="button" class="btn btn-block"><a href="{{ path('liste_sellings')}}">vendeur</a></button
+{% endblock %}

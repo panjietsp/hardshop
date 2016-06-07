@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+ 
+             
+{% block body %}
+
+<h1>Nos ventes:</h1>
+
+
+{% for it in sellings %}
+
+	{{it.id}} : {{it.date|date("d/m/y")}}||{{it.count}}
+	<a href="{{ path('add_selling', { stockId: it.id }) }}">add_selling</a>
+
+
+{% endfor %}
+
+
+{% endblock %}
